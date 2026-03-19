@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans+SC:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-surface: #F9F9F8;
+  --color-surface-alt: #EFEFEF;
+  --color-ink: #1A1A1A;
+  --color-ink-muted: rgba(26, 26, 26, 0.6);
+  --color-ink-faint: rgba(26, 26, 26, 0.4);
+  --color-line: rgba(26, 26, 26, 0.1);
+  --color-line-strong: #1A1A1A;
+
+  /* Typography */
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Global Heading Styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-medium text-ink tracking-tight;
+  }
+
+  h1 { @apply text-5xl md:text-7xl leading-none; }
+  h2 { @apply text-4xl md:text-5xl leading-tight; }
+  h3 { @apply text-2xl md:text-3xl leading-snug; }
+  h4 { @apply text-xl md:text-2xl leading-snug; }
+
+  /* Global Paragraph Styles */
+  p {
+    @apply text-base leading-relaxed text-ink;
+  }
+}
